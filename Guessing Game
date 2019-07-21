@@ -1,0 +1,47 @@
+/*Majdi Nagi
+  7.20.2019
+  This program it's a game that you have to guess a number
+  and then if you guess the same number that the randem
+  function picked you win and it jumbes to the next player.*/
+  
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
+using namespace std;
+int player=0;
+int input;
+int i=1;
+
+
+
+
+int main()
+{
+    while(i<10){
+        srand((unsigned)time(0));
+        
+        player=(rand()%10)+1;
+        cout<<"Player Number "<<i<<"\n";
+
+        cout<<"Pick a number between 1-100?\n";
+        cin>>input;
+        do{
+            if (input>player){
+                
+                cout<<"Try a smaller number than "<<input<<"\n";
+                cin>>input;
+                
+                
+            }
+            if (input<player) {
+                cout<<"Try a bigger number than "<<input<<"\n";
+                cin>>input;
+            }
+            if(input==player){
+                cout<<"Congrats that's the right number.\n";
+                
+            }
+        }while(input!=player);
+        i++;
+    }
+}
